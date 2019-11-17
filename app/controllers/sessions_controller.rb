@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
       flash[:positive] = "Successful login"
       redirect_to root_path
     else
+      flash[:negative] = "Username and/or password not recognized. Please try again."
+      redirect_to root_path
     end
   end
 
