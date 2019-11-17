@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Messengerwebapp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Messengerwebapp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+</head>
 
-  <body>
-    <%= yield %>
+<body>
+  <div class="outer-container">
+    <div class="ui menu inverted">
+      <% if current_user %>
+      <a class="item">Welcome, <%= current_user.username %></a>
+      <div class="right menu">
+        <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
+        <% else %>
+        <a class="item">Messenger Web App</a>
+        <div class="right menu">
+          <%= link_to "Sign In", signin_path, class: "item" %>
+          <%= link_to "Sign Up", signup_path, class: "item" %>
+          <% end %>
+          <%= link_to "https://github.com/rwarbelow/messengerwebapp", class: "item" do %>
+          View code on &nbsp;<i class="github icon"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="ui container">
+        <% flash.each do |key, value| %>
+          <%= content_tag :div, value, class: "ui message #{key}" %>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
-</html>
+  </html>

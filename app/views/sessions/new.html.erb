@@ -1,0 +1,39 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular edit outline icon"></i>
+  Welcome
+</h2>
+
+<div class="ui placeholder segment">
+	<div class="ui two column very relaxed stackable grid">
+		<div class="column">
+			<div class="ui form">
+				<%= form_with(scope: :session, url: signin_path, class: 'ui form') do |f| %>
+					<div class="field">
+						<%= f.label :username %>
+						<%= f.text_field :username %>
+					</div>
+					<div class="field">
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+					</div>
+					<%= f.submit "Sign in", class: "ui button", id: "sign_in" %>
+				<% end %>
+			</div>
+		</div>
+		<div class="middle aligned column">
+			<div class="ui big button">
+				<%= link_to signup_path do %>
+          Sign Up &nbsp;<i class="signup icon"></i>
+          <% end %>
+			</div>
+		</div>
+	</div>
+	<div class="ui vertical divider">
+		Or
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,16 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular users icon"></i>
+  Sign Up
+</h2>
+
+<%= form_with(model: @user, url: signup_path, class: 'ui form') do |f| %>
+<div class="field">
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+</div>
+<div class="field">
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+</div>
+<%= f.submit "Create Account", class: "ui button", id: "create_account" %>
+<% end %>
