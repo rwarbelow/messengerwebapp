@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy'
 	get '/signin', to: 'sessions#new'
 	post '/signin', to: 'sessions#create'
-	root to: 'chatroom#index'
+	resources :chatrooms, only: [:index, :show, :new, :create, :destroy]
+	post '/messages', to: 'messages#create'
+	root to: 'chatrooms#index'
 end

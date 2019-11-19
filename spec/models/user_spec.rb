@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+	it { should have_many(:messages) }
   it "is valid with valid attributes" do
   	user = User.new(username: "rachel", password: "rachel")
     expect(user).to be_valid
