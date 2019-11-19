@@ -1,0 +1,10 @@
+<%= form_with(model: @chatroom, class: "ui form") do |f| %>
+  <div class="two fields">
+    <div class="field">
+    	<%= f.text_field :topic, placeholder: "Topic" %>
+    </div>
+    <div class="field">
+    	<%= f.submit "Create room", class: "ui primary button", id: "create_chatroom" %>
+    </div>
+  </div>
+<% end %>

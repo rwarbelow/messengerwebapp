@@ -1,1 +1,5 @@
-<%= link_to chatroom.topic, chatroom_path(chatroom), class: "item" %>
+<tr class="topic">
+	<td data-label="Topic"><%= link_to chatroom.topic, chatroom_path(chatroom), class: "item" %></td>
+	<td data-label="Contributors"><%= chatroom.contributor_count %></td>
+	<td data-label="Messages"><%= chatroom.message_count %></td>
+</tr>

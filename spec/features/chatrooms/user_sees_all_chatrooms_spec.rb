@@ -9,7 +9,9 @@ RSpec.feature "User sees all chatrooms" do
    
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Let's Chat")
-    expect(page).to have_content("Potatoes")
-    expect(page).to have_content("Cheese")
+    within(".table") do
+	    expect(page).to have_content("Potatoes")
+	    expect(page).to have_content("Cheese")
+	  end
   end
 end
