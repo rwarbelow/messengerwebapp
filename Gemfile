@@ -16,6 +16,7 @@ gem 'bcrypt'
 gem 'turbolinks', '~> 5.2.0'
 gem 'redis'
 gem 'local_time'
+gem 'active_elastic_job'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
