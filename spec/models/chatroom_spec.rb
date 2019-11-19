@@ -30,4 +30,11 @@ RSpec.describe Chatroom, type: :model do
   	expect(chatroom_1.message_count).to eq(3)
   	expect(chatroom_2.message_count).to eq(1)
   end
+  it "knows which chatroom is the default" do
+    chatroom_1 = Chatroom.new(topic: "Default")
+    chatroom_2 = Chatroom.new(topic: "Not default")
+
+    expect(chatroom_1.default?).to be(true)
+    expect(chatroom_2.default?).to be(false)
+  end
 end

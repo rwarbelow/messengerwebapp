@@ -11,4 +11,8 @@ class Chatroom < ApplicationRecord
 	def message_count
 		messages.count
 	end
+
+	def default?
+		topic == "Default"
+	end
 end

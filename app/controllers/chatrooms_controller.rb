@@ -20,6 +20,17 @@ class ChatroomsController < ApplicationController
 		end
 	end
 
+	def destroy
+		chatroom = Chatroom.find(params[:id])
+
+		if chatroom.default?
+			flash[:negative] = "Default chatroom cannot be deleted"
+		else
+			chatroom.destroy
+		end
+		redirect_to chatrooms_path
+	end
+
 	private
 
 	def require_logged_in_user
