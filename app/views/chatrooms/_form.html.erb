@@ -1,4 +1,4 @@
-<%= form_with(model: @chatroom, class: "ui form") do |f| %>
+<%= form_with(model: @chatroom, class: "ui form", id: "new_chatroom_form") do |f| %>
   <div class="two fields">
     <div class="field">
     	<%= f.text_field :topic, placeholder: "Topic" %>

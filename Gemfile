@@ -14,6 +14,8 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'turbolinks', '~> 5.2.0'
+gem 'redis'
+gem 'local_time'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

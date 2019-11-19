@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require local-time
 //= require jquery
 //= require activestorage
 //= require semantic-ui
 //= require turbolinks
-//= require_tree .
+// = require_tree .
+//= require_tree ./channels
+//= stub 'channels/messages'

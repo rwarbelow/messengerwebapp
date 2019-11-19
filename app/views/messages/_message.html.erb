@@ -6,7 +6,7 @@
     <div class="summary">
       <a><%= message.user.username %></a>
       <div class="date">
-        <%= message.created_at.strftime("%b %e, %l:%M %p") %>
+        <%= local_time(message.created_at, "%b %e, %l:%M %p") %>
       </div>
     </div>
     <div class="extra text">

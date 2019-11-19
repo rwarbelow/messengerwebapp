@@ -1,20 +1,17 @@
 <h2 class="ui header"><%= @chatroom.topic %></h2>
-<div class="ui feed">
-	<%= render @chatroom.messages %>
+<div class="ui feed messages" data-chatroom=<%= @chatroom.id %> id=<%= "room-#{@chatroom_id}" %>>
+ <%= render @chatroom.messages %>
 </div>
 
-<div class="ui fluid action input">
+<%= form_with(model: @chatroom.messages.new, class: "ui form", id: "post_message_form") do |f| %>
+<div class="two fields">
+  <div class="field">
+   <%= f.text_field :body, placeholder: "What do you want to say?" %>
+ </div>
+ <div class="field">
+   <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+   <%= f.submit "Post", class: "ui primary button", id: "post_message" %>
+ </div>
 </div>
-
-
-<%= form_with(model: @chatroom.messages.new, class: "ui form") do |f| %>
-  <div class="two fields">
-    <div class="field">
-    	<%= f.text_field :body, placeholder: "What do you want to say?" %>
-    </div>
-    <div class="field">
-    	<%= f.hidden_field :chatroom_id, value: @chatroom.id %>
-    	<%= f.submit "Post", class: "ui primary button", id: "post_message" %>
-    </div>
-  </div>
 <% end %>
+<%= javascript_include_tag 'channels/messages' %>

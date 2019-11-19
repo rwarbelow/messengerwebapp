@@ -1,10 +1,10 @@
-development:
-  adapter: async
+development: &development
+  adapter: redis
+  url: redis://localhost:6379
 
-test:
-  adapter: async
+test: *development
 
 production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: messengerwebapp_production
+  channel_prefix: <%= ENV.fetch("CABLE_CHANNEL_PREFIX") { "messengerwebapp" } %>
