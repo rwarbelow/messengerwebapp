@@ -3,7 +3,7 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_cable.url = 'ws://http://messengerwebapp.us-east-2.elasticbeanstalk.com/cable'
+  config.action_cable.url = 'ws://messengerwebapp.us-east-2.elasticbeanstalk.com/cable'
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.js_compressor = :uglifier
