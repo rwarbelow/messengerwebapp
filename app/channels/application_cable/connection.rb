@@ -7,7 +7,12 @@ module ApplicationCable
     end
 
     def find_logged_in_user
-      User.find_by(id: request.session[:user_id]) || reject_unauthorized_connection
+      current_user = User.find_by(id: cookies.signed[:user_id])
+      if current_user
+        current_user
+      else
+        reject_unauthorized_connection
+      end
     end
   end
 end

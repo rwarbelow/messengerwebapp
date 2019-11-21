@@ -5,12 +5,12 @@
 
 <%= form_with(model: @user, url: signup_path, class: 'ui form') do |f| %>
 <div class="field">
-	<%= f.label :username %>
-	<%= f.text_field :username %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
 </div>
 <div class="field">
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 </div>
 <%= f.submit "Create Account", class: "ui button", id: "create_account" %>
 <% end %>

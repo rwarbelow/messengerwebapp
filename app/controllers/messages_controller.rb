@@ -1,19 +1,18 @@
 class MessagesController < ApplicationController
-	def create
+  def create
     @message = current_user.messages.build(message_params)
 
     if @message.save
-      ActionCable.server.broadcast('messages', message: @message.body)
       redirect_to chatroom_path(@message.chatroom)
     else
       flash[:negative] = @message.errors.full_messages.join(", ")
-			@chatroom = @message.chatroom
-			redirect_to chatroom_path(@chatroom)
+      @chatroom = @message.chatroom
+      redirect_to chatroom_path(@chatroom)
     end
   end
 
-	private
-	def message_params
-		params.require(:message).permit(:body, :chatroom_id)
-	end
+  private
+  def message_params
+    params.require(:message).permit(:body, :chatroom_id)
+  end
 end

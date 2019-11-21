@@ -12,9 +12,9 @@ module Helpers
   end
 
   def sign_in_existing_user
-  	user   = User.create(username: "rachel", password: "rachel")
-  	visit '/signin'
-  	fill_in "session[username]", with: user_attributes[:username]
+    user   = User.create(username: "rachel", password: "rachel")
+    visit '/signin'
+    fill_in "session[username]", with: user_attributes[:username]
     fill_in "session[password]", with: user_attributes[:password]
     click_on "create_account"
   end

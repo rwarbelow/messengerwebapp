@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User posts a message to a chatroom" do
-  scenario "with valid attributes" do
+  scenario "with valid attributes", :js do
     user_attributes = {
       username: "rachel",
       password: "rachel"

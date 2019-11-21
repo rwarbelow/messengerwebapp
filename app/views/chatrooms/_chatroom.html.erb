@@ -1,12 +1,12 @@
 <tr class="topic">
-	<td data-label="Topic"><%= link_to chatroom.topic, chatroom_path(chatroom), class: "item" %></td>
-	<td data-label="Contributors"><%= chatroom.contributor_count %></td>
-	<td data-label="Messages"><%= chatroom.message_count %></td>
-	<td>
-		<% unless chatroom.default? %>
-			<%= link_to chatroom_path(chatroom), method: :delete, id: "delete-chatroom-#{chatroom.id}", data: { confirm: "Are you sure you want to delete the chatroom #{chatroom.topic}?" } do %>
-				<i class="trash icon red"></i>
-			<% end %>
-		<% end %>
-	</td>
+  <td data-label="Topic"><%= link_to chatroom.topic, chatroom_path(chatroom), class: "item" %></td>
+  <td data-label="Contributors"><%= chatroom.contributor_count %></td>
+  <td data-label="Messages"><%= chatroom.message_count %></td>
+  <td>
+    <% unless chatroom.default? %>
+      <%= link_to chatroom_path(chatroom), method: :delete, id: "delete-chatroom-#{chatroom.id}", data: { confirm: "Are you sure you want to delete the chatroom #{chatroom.topic}?" } do %>
+        <i class="trash icon red"></i>
+      <% end %>
+    <% end %>
+  </td>
 </tr>

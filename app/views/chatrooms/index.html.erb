@@ -4,20 +4,20 @@
 </h2>
 
 <% if @chatrooms.any? %>
-	<table class="ui celled table fixed">
-	  <thead>
-	    <tr><th>Topic</th>
-	    <th>Contributors</th>
-	    <th>Total Messages</th>
-	    <th></th>
-	  </tr></thead>
-	  <tbody>
-	  	<%= render @chatrooms %>
-	  </tbody>
-	</table>
-	<h3 class="ui header">Don't see what you're looking for? Start a new room here!</h3>
+  <table class="ui celled table fixed">
+    <thead>
+      <tr><th>Topic</th>
+      <th>Contributors</th>
+      <th>Total Messages</th>
+      <th></th>
+    </tr></thead>
+    <tbody>
+      <%= render @chatrooms %>
+    </tbody>
+  </table>
+  <h3 class="ui header">Don't see what you're looking for? Start a new room here!</h3>
 <% else %>
-	<h3 class="ui header">Start a new room here.</h3>
+  <h3 class="ui header">Start a new room here.</h3>
 <% end %>
 
 <%= render "form" %>

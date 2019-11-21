@@ -1,5 +1,5 @@
 class ChatroomBroadcastJob < ApplicationJob 
-	queue_as :chatroombroadcastjob
+  queue_as :chatroombroadcastjob
  
   def perform(chatroom) 
     ActionCable.server.broadcast("chatrooms", {template: create_html(chatroom)})

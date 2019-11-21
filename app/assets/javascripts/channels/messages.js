@@ -4,12 +4,11 @@ $(document).on('turbolinks:load', function() {
   checkSubscription(chatroomId);
   $('form#post_message_form').submit(function(event) {
     var messageBody = $('#message_body').val();
-    App['room' + chatroomId].send({messageBody: messageBody});
+    App['room' + chatroomId].send({message_body: messageBody});
     $('#message_body').val('');
     return false;
   });
 });
-
 
 function createRoomConnection(chatroomId) {
   App['room' + chatroomId] = App.cable.subscriptions.create({ channel: 'MessagesChannel', room: chatroomId}, {  

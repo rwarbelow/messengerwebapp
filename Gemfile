@@ -24,7 +24,10 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
+  gem 'selenium-webdriver'
+  gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'action-cable-testing'
 end
 
 group :development do
