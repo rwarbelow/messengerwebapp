@@ -32,3 +32,20 @@ Assuming you have [rails](https://gorails.com/setup/osx/10.15-catalina) and [red
 * Autoscroll does not work when user first enters a chatroom. User must post one chat in order for autoscroll to work.
 * Occasionally, the first message posted in a new room will not show up for another user. This is inconsistent behavior, as sometimes the message does show up. 
 * Styling on mobile interfaces and shrunken browser windows is not great. 
+
+## AWS Services Used
+
+* Elastic Beanstalk
+* SQS
+* ElastiCache
+* Code Pipeline
+* RDS
+* IAM
+
+## Resources Used
+
+* https://edgeguides.rubyonrails.org/action_cable_overview.html
+* https://relishapp.com/palkan/action-cable-testing/docs
+* https://www.thegreatcodeadventure.com/rails-5-action-cable-with-multiple-chatroom-subscriptions/
+* https://www.cmgresearch.com/2017/05/11/step-7-action-cable-on-elastic-beanstalk.html
+* https://semantic-ui.com/
